@@ -1,0 +1,2 @@
+tri ascii
+mkdir plop; chmod 000 plop; ls -l plop

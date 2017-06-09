@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile2.0                                        :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aleveque <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/16 20:20:16 by aleveque          #+#    #+#              #
-#    Updated: 2017/06/07 12:44:11 by aleveque         ###   ########.fr        #
+#    Updated: 2017/06/09 12:48:45 by aleveque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,3 +56,6 @@ fclean:
 	@make fclean -C libft/
 	@rm -rf $(OBJDIR)
 	@rm -rf $(NAME)
+
+test:
+		@$(CC) -o ft_ls src/test.c $(LIBFT)

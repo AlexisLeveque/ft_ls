@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 13:44:05 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/07 14:32:27 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/09 13:17:12 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
     DIR* rep = NULL;
 	struct dirent* fichierLu = NULL;
 
-    rep = opendir("/Users/aleveque");
+    rep = opendir("/etc");
 
     if (rep == NULL)
 	{
@@ -28,11 +28,12 @@ int main(void)
 
 while ((fichierLu = readdir(rep)) != NULL)
 {
-	//if (fichierLu->d_name[0] != '.')
-	printf("Le fichier lu s'appelle '%s'\n", fichierLu->d_name);
-		printf("%d\n", telldir(rep));
+	if (fichierLu->d_name[0] != '.')
+	{
+		printf("Le fichier lu s'appelle '%s', de type : '%hhd'\n", fichierLu->d_name, fichierLu->d_type);
+		printf("%ld\n", telldir(rep));
+	}
 }
-
 
 
     if (closedir(rep) == -1)
