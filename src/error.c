@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/17 18:26:30 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/13 19:41:47 by aleveque         ###   ########.fr       */
+/*   Created: 2017/06/07 13:44:05 by aleveque          #+#    #+#             */
+/*   Updated: 2017/06/13 20:08:21 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LS_H
-# define FT_LS_H
+#include "../includes/ft_ls.h"
 
-#include "../ft_printf/ft_printf.h"
-# include "../libft/libft.h"
-# include <stdlib.h>
-# include <stdio.h>
-# include <dirent.h>
-# include <sys/types.h>
-
-typedef struct	s_env
+void	error_opt(int opt)
 {
-	int			opt_l;
-	int			opt_R;
-	int			opt_a;
-	int			opt_r;
-	int			opt_t;
+	ft_printf("ls: illegal option -- %c\n", opt);
+	ft_printf("usage: ls [-alrRt] [file ...]\n");
+	exit(0);
+}
 
-}				t_env;
-
-void	error_opt(int opt);
-void	error(int err);
-void	parsing(t_env *env, int argc, char **argv);
-
-#endif
+void	error(int err)
+{
+	if (err == 1)
+	{
+	}
+	exit(0);
+}

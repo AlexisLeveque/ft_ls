@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstaddend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 16:22:01 by aleveque          #+#    #+#             */
-/*   Updated: 2017/03/20 15:45:55 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/13 19:17:11 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <string.h>
 
-void	ft_lstaddend(t_list **list, t_list *new)
+void	ft_lstaddend(t_dir **list, t_dir *new)
 {
-	t_list *lst;
+	t_dir *lst;
 
 	lst = *list;
 	if (lst == NULL)

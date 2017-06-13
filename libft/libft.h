@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:12:40 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/07 12:44:50 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/13 19:18:52 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,24 @@
 # include <string.h>
 # include "get_next_line.h"
 
-typedef struct		s_list
+typedef struct		s_dir
 {
-	int				x;
-	int				y;
-	int				z;
-	struct s_list	*next;
-}					t_list;
+	char			*name;
+	struct s_dir	*next;
+}					t_dir;
 
 void				ft_freetab(char	**tab);
 int					ft_nbrlen(int nbr);
 int					ft_strlen_c(char *str, char c);
 void				ft_freeall(int nbr, char *s1, char *s2);
-void				ft_lstaddend(t_list **list, t_list *neww);
+void				ft_lstaddend(t_dir **list, t_dir *neww);
 int					ft_absolu(int nbr);
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void				ft_lstdel(t_list **alst);
-void				ft_lstdelone(t_list **alst);
-void				ft_lstadd(t_list **alst, t_list *neew);
-t_list				*ft_lstnew(int nbr, int nbr2, int nbr3);
+t_dir				*ft_lstmap(t_dir *lst, t_dir *(*f)(t_dir *elem));
+void				ft_lstiter(t_dir *lst, void (*f)(t_dir *elem));
+void				ft_lstdel(t_dir **alst);
+void				ft_lstdelone(t_dir **alst);
+void				ft_lstadd(t_dir **alst, t_dir *neew);
+t_dir				*ft_lstnew();
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);

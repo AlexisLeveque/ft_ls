@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 12:40:09 by aleveque          #+#    #+#             */
-/*   Updated: 2017/03/20 15:25:16 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/13 19:18:14 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 #include <string.h>
 #include <stdlib.h>
 
-t_list	*ft_lstnew(int x, int y, int z)
+t_dir	*ft_lstnew()
 {
-	t_list *new;
+	t_dir *new;
 
-	if (!(new = (t_list*)malloc(sizeof(t_list))))
+	if (!(new = (t_dir*)malloc(sizeof(t_dir))))
 		return (NULL);
-	new->y = y;
-	new->x = x;
-	new->z = z;
 	new->next = NULL;
 	return (new);
 }

@@ -1,2 +1,7 @@
 tri ascii
 mkdir plop; chmod 000 plop; ls -l plop
+
+c = 2
+b = 6
+- = 8
+d = 4

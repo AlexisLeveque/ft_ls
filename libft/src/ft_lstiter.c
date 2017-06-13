@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 14:13:19 by aleveque          #+#    #+#             */
-/*   Updated: 2016/12/02 13:08:15 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/13 19:17:39 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <string.h>
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_lstiter(t_dir *lst, void (*f)(t_dir *elem))
 {
-	t_list *list;
+	t_dir *list;
 
 	list = lst;
 	while (list != NULL)
