@@ -6,7 +6,7 @@
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 13:44:05 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/13 20:08:21 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/14 18:31:23 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	error_opt(int opt)
 {
 	ft_printf("ls: illegal option -- %c\n", opt);
-	ft_printf("usage: ls [-alrRt] [file ...]\n");
+	ft_printf("usage: ls [-alrRt1] [file ...]\n");
 	exit(0);
 }
 

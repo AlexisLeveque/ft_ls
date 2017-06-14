@@ -6,7 +6,7 @@
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 13:55:11 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/13 19:17:31 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/14 16:08:31 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_lstdelone(t_dir **alst)
 	t_dir *list;
 
 	list = *alst;
+	free(list->name);
 	free(list);
 	*alst = NULL;
 }

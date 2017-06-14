@@ -6,7 +6,7 @@
 #    By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/16 20:20:16 by aleveque          #+#    #+#              #
-#    Updated: 2017/06/13 19:40:35 by aleveque         ###   ########.fr        #
+#    Updated: 2017/06/14 18:42:10 by aleveque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCDIR = src
 
 OBJDIR = obj
 
-SRC = main.c parsing.c error.c
+SRC = main.c parsing.c error.c open_dir.c tri.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -39,7 +39,7 @@ libcomp:
 	@make -C ft_printf/
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@$(CC) -c -o $@ $^
+	@$(CC) -c -o $@ $^ -g
 
 $(OBJDIR):
 	@echo "\033[1;32mcompiling obj"

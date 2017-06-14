@@ -6,7 +6,7 @@
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 13:44:05 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/13 19:54:30 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/14 16:29:49 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@ int		main(int argc, char **argv)
 	t_env	env;
 
 	parsing(&env, argc, argv);
+	open_dir(&env);
 }

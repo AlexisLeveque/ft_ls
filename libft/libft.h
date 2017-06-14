@@ -6,7 +6,7 @@
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:12:40 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/13 19:18:52 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/14 18:46:31 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,19 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <dirent.h>
+# include <sys/types.h>
+# include <stdlib.h>
+# include <stdio.h>
 # include "get_next_line.h"
 
 typedef struct		s_dir
 {
+	int				err;
 	char			*name;
+	DIR				*rep;
+	struct dirent	*dir;
+	struct s_dir	*in;
 	struct s_dir	*next;
 }					t_dir;
 
@@ -33,7 +41,7 @@ void				ft_lstiter(t_dir *lst, void (*f)(t_dir *elem));
 void				ft_lstdel(t_dir **alst);
 void				ft_lstdelone(t_dir **alst);
 void				ft_lstadd(t_dir **alst, t_dir *neew);
-t_dir				*ft_lstnew();
+t_dir				*ft_lstnew(char *name);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);

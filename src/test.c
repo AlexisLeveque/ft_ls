@@ -6,18 +6,19 @@
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 13:44:05 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/13 19:04:25 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/14 16:00:34 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
 	DIR* rep = NULL;
 	struct dirent* fichierLu = NULL;
 
-	rep = opendir("/Users/aleveque/projet/ft_ls");
+	rep = opendir("..");
+
 
 	if (rep == NULL)
 	{
@@ -44,5 +45,6 @@ while ((fichierLu = readdir(rep)) != NULL)
 
     puts("Le dossier a ete ferme avec succes");
 
+	printf("%s\n", argv[0]);
     return 0;
 }

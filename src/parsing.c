@@ -6,7 +6,7 @@
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 13:44:05 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/13 20:12:17 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/14 17:12:40 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,22 @@ void	init_env(t_env *env)
 }
 
 void	parsing2(t_env *env, int i, int argc, char **argv)
-{ // recupérer la pos de la ou on est pour l'ajouter a l'elem ou qqpart avec la liste;
-	// if (i >= argc)
-	// 	ft_lstadd(".");
-	// else
-	// {
-	// 	while (i < argc)
-	// 		ft_lstadd(argv[i++]);
-	// }
-	printf("opt_l= %d\nopt_R= %d\nopt_a= %d\nopt_r= %d\nopt_t= %d\n", env->opt_l, env->opt_R, env->opt_a,
-	env->opt_r, env->opt_t);
+{
+	if (i >= argc)
+		ft_lstadd(&env->dir, ft_lstnew("."));
+	else
+	{
+		while (i < argc)
+			ft_lstadd(&env->dir, ft_lstnew(argv[i++]));
+	}
+	// printf("opt_l= %d\nopt_R= %d\nopt_a= %d\nopt_r= %d\nopt_t= %d\n", env->opt_l, env->opt_R, env->opt_a,
+	// env->opt_r, env->opt_t);
+	t_dir *tmp = env->dir;
+	while (tmp != NULL)
+	{
+		// printf("name: %s\n", tmp->name);
+		tmp = tmp->next;
+	}
 }
 
 void	parsing(t_env *env, int argc, char **argv)
@@ -55,7 +61,7 @@ void	parsing(t_env *env, int argc, char **argv)
 				env->opt_r = 1;
 			else if (argv[i][y] == 't')
 				env->opt_t = 1;
-			else
+			else if (argv[i][y] != '1')
 				error_opt(argv[i][y]);
 		i++;
 	}
