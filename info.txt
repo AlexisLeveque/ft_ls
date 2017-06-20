@@ -5,3 +5,6 @@ c = 2
 b = 6
 - = 8
 d = 4
+
+faut changer la fonctione de tri pour pouvoir utiliser stat()
+

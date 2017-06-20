@@ -6,7 +6,7 @@
 #    By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/16 20:20:16 by aleveque          #+#    #+#              #
-#    Updated: 2017/06/14 18:42:10 by aleveque         ###   ########.fr        #
+#    Updated: 2017/06/20 17:07:53 by aleveque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCDIR = src
 
 OBJDIR = obj
 
-SRC = main.c parsing.c error.c open_dir.c tri.c
+SRC = main.c parsing.c error.c open_dir.c tri.c basic.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -47,7 +47,7 @@ $(OBJDIR):
 
 $(NAME): $(OBJP)
 	@echo "\033[1;34mcompiling exec"
-	@$(CC) -o $@ $^ $(LIBFT) $(PRINTF)
+	@$(CC) -g -o $@ $^ $(LIBFT) $(PRINTF)
 
 clean:
 	@echo "\033[1;31mcleaning obj"

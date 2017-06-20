@@ -6,7 +6,7 @@
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 12:40:09 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/14 19:00:10 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/20 15:37:06 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_dir	*ft_lstnew(char *name)
 	}
 	new->err = 0;
 	new->rep = NULL;
+	new->dir = NULL;
 	new->in = NULL;
 	new->next = NULL;
 	return (new);

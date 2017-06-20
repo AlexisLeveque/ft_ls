@@ -6,11 +6,27 @@
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 17:29:53 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/14 19:13:24 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/20 19:17:18 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
+
+void	tri_inv(t_dir **dir)
+{
+	t_dir *tmp1;
+	t_dir *tmp2;
+
+	tmp1 = *dir;
+	*dir = NULL;
+	while (tmp1 != NULL)
+	{
+		tmp2 = tmp1->next;
+		tmp1->next = NULL;
+		ft_lstadd(dir, tmp1);
+		tmp1 = tmp2;
+	}
+}
 
 int		tri_ascii(t_dir *tmp2, t_dir *tmp3)
 {
@@ -53,11 +69,11 @@ int		ft_tri(t_dir **dir, int (*tri_func)(t_dir*, t_dir*))
 	return (0);
 }
 
-void	ft_tria(t_dir **dir)
+void	ft_tria(t_dir **dir, int (*tri_func)(t_dir*, t_dir*))
 {
 	int ret;
 
 	ret = 1;
 	while (ret != 0)
-		ret = ft_tri(dir, &(tri_ascii));
+		ret = ft_tri(dir, tri_func);
 }

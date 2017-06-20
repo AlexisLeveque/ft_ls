@@ -6,7 +6,7 @@
 /*   By: aleveque <aleveque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 13:44:05 by aleveque          #+#    #+#             */
-/*   Updated: 2017/06/14 17:12:40 by aleveque         ###   ########.fr       */
+/*   Updated: 2017/06/20 17:59:04 by aleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,21 @@ void	init_env(t_env *env)
 	env->opt_a = 0;
 	env->opt_r = 0;
 	env->opt_t = 0;
+	env->nb_param = 0;
+	env->dir = NULL;
+}
+
+int		count_lst(t_dir *dir)
+{
+	int i;
+
+	i = 0;
+	while (dir != NULL)
+	{
+		i++;
+		dir = dir->next;
+	}
+	return (i);
 }
 
 void	parsing2(t_env *env, int i, int argc, char **argv)
@@ -30,14 +45,15 @@ void	parsing2(t_env *env, int i, int argc, char **argv)
 		while (i < argc)
 			ft_lstadd(&env->dir, ft_lstnew(argv[i++]));
 	}
+	env->nb_param = count_lst(env->dir);
 	// printf("opt_l= %d\nopt_R= %d\nopt_a= %d\nopt_r= %d\nopt_t= %d\n", env->opt_l, env->opt_R, env->opt_a,
 	// env->opt_r, env->opt_t);
-	t_dir *tmp = env->dir;
-	while (tmp != NULL)
-	{
-		// printf("name: %s\n", tmp->name);
-		tmp = tmp->next;
-	}
+	// t_dir *tmp = env->dir;
+	// while (tmp != NULL)
+	// {
+	// 	// printf("name: %s\n", tmp->name);
+	// 	tmp = tmp->next;
+	// }
 }
 
 void	parsing(t_env *env, int argc, char **argv)
